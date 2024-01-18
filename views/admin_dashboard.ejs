@@ -1,0 +1,29 @@
+<h1>Admin Dashboard</h1>
+<% if(locals.user && locals.user.role == 'admin') { %>
+
+    <% for(user of users) {%>
+
+        <img
+        src="https://cdn-icons-png.flaticon.com/512/7277/7277044.png"
+        alt=""
+        style="width: 40px"
+        />
+
+        <h5><%= user.username %></h5>
+        <h5><%= user.email %></h5>
+        <p>Role :<%= user.role %></p>
+
+        <a href="/destroy/<%= user._id %>">Delete</a>
+
+
+        <form action="/review/create/<%= user._id %>" method="POST">
+            <textarea name="feedback" id="feedback" cols="30" rows="3" placeholder="Assign Review"></textarea>
+            <input type="submit">;
+        </form>
+
+
+
+
+        <%}%>
+
+    <%}%>

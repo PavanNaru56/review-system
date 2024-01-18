@@ -1,0 +1,13 @@
+<h1>Employee Dashboard</h1>
+
+
+<% for(review of reviews) { %>
+
+    
+    <p><%= review.review %>,
+      From: <%= review.reviewer.username%></p>
+    
+    <a href="/review/done/<%= review._id %>">Done</a>
+
+    
+<% } %>

@@ -1,0 +1,16 @@
+<ul>
+    <% if(locals.user) { %>
+
+        <li><p><%= user.username  %></p></li>
+
+        <li><a href="/sign-out">Sign Out</a></li>
+
+
+        <% }else{ %>
+
+            <li><a href="/sign-up">Sign Up</a></li>
+            <li><a href="/">Sign In</a></li>
+
+
+            <% } %>
+</ul>
